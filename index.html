@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Feng Shui Kua Number Calculator — Free, Instant, Lucky Directions for Bed &amp; Desk</title>
+<meta name="description" content="Free Kua (Gua) number calculator: enter your birth year and gender to get your Eight Mansions lucky directions for wealth, health, love and stability — instantly, no signup.">
+<link rel="canonical" href="https://fengting2025.github.io/kua-number-calculator/">
+<meta property="og:title" content="Free Feng Shui Kua Number Calculator — Your 4 Lucky Directions">
+<meta property="og:description" content="Discover your Kua number, East/West group, trigram and lucky directions for bed, desk and front door. Instant and free.">
+<meta property="og:image" content="https://fengting2025.github.io/kua-number-calculator/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Free Feng Shui Kua Number Calculator — Your 4 Lucky Directions">
+<meta name="twitter:description" content="Discover your Kua number, East/West group and 4 lucky directions — instantly, no signup.">
+<meta name="twitter:image" content="https://fengting2025.github.io/kua-number-calculator/og-image.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://fengting2025.github.io/kua-number-calculator/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='44' fill='%230f2740'/%3E%3Cpath d='M50 18a32 32 0 0 1 0 64V18z' fill='%23c9a44c'/%3E%3Ccircle cx='50' cy='50' r='10' fill='%230f2740'/%3E%3C/svg%3E">
+<style>
+:root{
+  --navy:#0f2740; --navy2:#16385a; --ink:#1d2430; --body:#41505f;
+  --muted:#7c8a99; --gold:#c9a44c; --gold-dark:#a8842f; --cream:#faf7ef;
+  --good:#1f7a52; --good-bg:#e9f6ef; --good-line:#bcdccb;
+  --bad:#b0413e; --bad-bg:#fbedec; --bad-line:#e7c5c4;
+  --card:#ffffff; --line:#e6e2d6;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--body);background:var(--cream);line-height:1.65;font-size:16px}
+a{color:var(--navy2)}
+.wrap{max-width:880px;margin:0 auto;padding:0 18px}
+header{background:linear-gradient(160deg,var(--navy) 0%,var(--navy2) 100%);color:#fff;padding:16px 0}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{font-weight:700;font-size:17px;letter-spacing:.3px;text-decoration:none;color:#fff}
+.brand span{color:var(--gold)}
+.header-links a{color:#dbe6f1;text-decoration:none;font-size:14px;margin-left:18px}
+.header-links a:hover{color:var(--gold)}
+.hero{text-align:center;padding:46px 0 10px}
+.hero h1{font-size:30px;line-height:1.25;color:var(--navy);font-weight:800;margin-bottom:12px}
+.hero p{max-width:620px;margin:0 auto;color:var(--body);font-size:16.5px}
+.hero .taiji{width:54px;height:54px;margin:0 auto 14px;display:block}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:0 8px 26px rgba(15,39,64,.07)}
+.form-card{max-width:560px;margin:26px auto 8px;padding:26px 24px}
+label.fld{display:block;font-weight:600;color:var(--ink);font-size:14.5px;margin-bottom:8px}
+select,input[type=number]{width:100%;padding:12px 14px;border:1.5px solid var(--line);border-radius:9px;font-size:16px;background:#fff;color:var(--ink)}
+select:focus,input:focus{outline:none;border-color:var(--gold)}
+.row{display:flex;gap:14px;margin-bottom:16px}
+.row>div{flex:1}
+.seg{display:flex;gap:10px}
+.seg button{flex:1;padding:12px 0;border:1.5px solid var(--line);background:#fff;border-radius:9px;font-size:15.5px;cursor:pointer;color:var(--body);font-weight:600}
+.seg button.on{background:var(--navy);border-color:var(--navy);color:#fff}
+.check{display:flex;gap:9px;align-items:flex-start;font-size:14px;color:var(--muted);margin:4px 0 18px;cursor:pointer}
+.check input{margin-top:3px;width:16px;height:16px;accent-color:var(--navy2)}
+.btn{display:block;width:100%;padding:15px 0;background:var(--gold);color:#1b2430;border:none;border-radius:10px;font-size:17px;font-weight:800;cursor:pointer;letter-spacing:.3px}
+.btn:hover{background:var(--gold-dark);color:#fff}
+.form-note{font-size:12.5px;color:var(--muted);text-align:center;margin-top:10px}
+/* result */
+#result{max-width:760px;margin:28px auto 0;display:none}
+.result-head{text-align:center;padding:30px 22px 24px;background:linear-gradient(160deg,var(--navy),var(--navy2));color:#fff;border-radius:14px 14px 0 0}
+.result-head .kua-big{font-size:56px;font-weight:800;color:var(--gold);line-height:1.1}
+.result-head .kua-sub{font-size:15px;opacity:.92;margin-top:4px}
+.group-pill{display:inline-block;margin-top:12px;background:rgba(201,164,76,.18);border:1px solid var(--gold);color:var(--gold);padding:5px 16px;border-radius:999px;font-size:13.5px;font-weight:700;letter-spacing:.4px}
+.result-body{padding:24px 22px 26px}
+.sec-title{font-size:13px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;color:var(--good);margin:20px 0 10px}
+.sec-title.bad{color:var(--bad)}
+.dir-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.dir{border-radius:10px;padding:13px 14px;border:1px solid}
+.dir.good{background:var(--good-bg);border-color:var(--good-line)}
+.dir.bad{background:var(--bad-bg);border-color:var(--bad-line)}
+.dir .d-name{font-weight:800;font-size:15.5px;color:var(--ink)}
+.dir .d-name b{color:var(--good);font-weight:800}
+.dir.bad .d-name b{color:var(--bad)}
+.dir .d-star{font-size:12.5px;color:var(--muted);margin-top:2px}
+.dir .d-use{font-size:13px;margin-top:5px;color:#3c4a58}
+.compass{margin:22px auto 6px;display:block;max-width:340px;width:100%;height:auto}
+.cta-band{margin-top:24px;background:#fff8e8;border:1.5px solid #e7d28f;border-radius:12px;padding:20px 20px 18px;text-align:center}
+.cta-band h3{color:var(--navy);font-size:18px;margin-bottom:6px}
+.cta-band p{font-size:14px;color:var(--body);margin-bottom:12px}
+.cta-btns{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+.cta-btns a{text-decoration:none;padding:12px 20px;border-radius:9px;font-weight:700;font-size:15px}
+.cta-primary{background:var(--gold);color:#1b2430}
+.cta-primary:hover{background:var(--gold-dark);color:#fff}
+.cta-ghost{border:1.5px solid var(--navy);color:var(--navy)}
+.cta-ghost:hover{background:var(--navy);color:#fff}
+.share-row{display:flex;gap:10px;justify-content:center;margin-top:16px;flex-wrap:wrap}
+.share-row a,.share-row button{font-size:13.5px;color:var(--navy2);background:none;border:1px solid var(--line);padding:8px 14px;border-radius:999px;cursor:pointer;text-decoration:none}
+.share-row a:hover,.share-row button:hover{border-color:var(--gold);color:var(--gold-dark)}
+/* content */
+section.content{max-width:760px;margin:44px auto 0}
+section.content h2{color:var(--navy);font-size:22px;margin:30px 0 10px;font-weight:800}
+section.content h3{color:var(--ink);font-size:17px;margin:20px 0 6px}
+section.content p{margin-bottom:10px}
+.steps{counter-reset:s;list-style:none;margin:12px 0}
+.steps li{position:relative;padding:8px 0 8px 42px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;left:0;top:8px;width:27px;height:27px;background:var(--navy);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13.5px;font-weight:700}
+.table-wrap{overflow-x:auto;margin:14px 0;border:1px solid var(--line);border-radius:10px}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:560px;background:#fff}
+th,td{padding:9px 11px;text-align:center;border-bottom:1px solid var(--line)}
+th{background:var(--navy);color:#fff;font-weight:700;white-space:nowrap}
+td:first-child,th:first-child{font-weight:700;color:var(--ink)}
+tr:last-child td{border-bottom:none}
+.good-text{color:var(--good);font-weight:700}
+.bad-text{color:var(--bad);font-weight:700}
+.faq details{background:#fff;border:1px solid var(--line);border-radius:10px;padding:14px 18px;margin-bottom:10px}
+.faq summary{font-weight:700;color:var(--ink);cursor:pointer}
+.faq p{margin-top:8px;font-size:14.5px}
+.disclaimer{max-width:760px;margin:36px auto 0;padding:16px 18px;background:#f1f3f5;border-radius:10px;font-size:12.5px;color:var(--muted);text-align:center}
+footer{background:var(--navy);color:#c6d2df;margin-top:50px;padding:30px 0;font-size:13.5px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center}
+footer a{color:#c6d2df;text-decoration:none}
+footer a:hover{color:var(--gold)}
+.foot-links a{margin-left:16px}
+@media(max-width:560px){
+ .hero h1{font-size:24px}
+ .dir-grid{grid-template-columns:1fr}
+ .row{flex-direction:column;gap:0}
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"Does my Kua number ever change?","acceptedAnswer":{"@type":"Answer","text":"No. The Kua number is derived from your birth year and gender, so it stays with you for life. Annual feng shui energies (flying stars) change each year and are read separately."}},
+    {"@type":"Question","name":"Why do men and women born in the same year get different Kua numbers?","acceptedAnswer":{"@type":"Answer","text":"The classical Lo Shu formula runs in opposite directions for yin and yang birth patterns, which is why the gender term differs. When the result is 5, a man uses Kua 2 (Kun) and a woman uses Kua 8 (Gen)."}},
+    {"@type":"Question","name":"I was born in January. Which year do I use?","acceptedAnswer":{"@type":"Answer","text":"The feng shui solar year begins at Li Chun, around 3-5 February. If you were born before Li Chun, use the previous calendar year when calculating your Kua number."}},
+    {"@type":"Question","name":"What if my partner and I are from different groups?","acceptedAnswer":{"@type":"Answer","text":"Give priority to the main breadwinner or the person recovering from illness. Otherwise choose a direction favorable to both, or use the calmer Fu Wei direction, and support the other person through desk or seating placement."}},
+    {"@type":"Question","name":"Is the Kua number the same as my Chinese zodiac sign?","acceptedAnswer":{"@type":"Answer","text":"No. The zodiac animal comes from the 12-year birth cycle, while the Kua number uses the Nine-Star Lo Shu system with gender and gives a personal map of compass directions."}}
+  ]
+}
+</script>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="brand" href="https://www.askmasterli.com/">☯ Ask Master <span>Li</span></a>
+    <nav class="header-links">
+      <a href="https://www.askmasterli.com/tools">Free Tools</a>
+      <a href="https://www.askmasterli.com/#pricing">Plans</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="hero">
+    <svg class="taiji" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="48" fill="#0f2740"/><path d="M50 2a48 48 0 0 1 0 96 24 24 0 0 1 0-48 24 24 0 0 0 0-48z" fill="#faf7ef"/><circle cx="50" cy="26" r="7" fill="#0f2740"/><circle cx="50" cy="74" r="7" fill="#faf7ef"/></svg>
+    <h1>Feng Shui Kua Number Calculator</h1>
+    <p>Enter your birth year to reveal your personal Kua (Gua) number, East or West group, and the four compass directions that support your <b>wealth, health, love and stability</b> — plus the four to use with caution. Free, instant, no signup.</p>
+  </div>
+
+  <div class="card form-card">
+    <div class="row">
+      <div>
+        <label class="fld" for="year">Birth year</label>
+        <input type="number" id="year" min="1920" max="2030" placeholder="e.g. 1990" inputmode="numeric">
+      </div>
+      <div>
+        <label class="fld">Gender</label>
+        <div class="seg">
+          <button type="button" id="g-female" onclick="setGender('female')">Female</button>
+          <button type="button" id="g-male" onclick="setGender('male')">Male</button>
+        </div>
+      </div>
+    </div>
+    <label class="check"><input type="checkbox" id="lichun"> I was born <b>before ~4 February</b> (before Li Chun) of my birth year</label>
+    <button class="btn" onclick="calc()">Reveal My Kua Number →</button>
+    <p class="form-note">Based on the classical Eight Mansions (Ba Zhai · 八宅) formula · Nothing is stored or sent</p>
+  </div>
+
+  <div id="result"></div>
+
+  <section class="content">
+    <h2>What is a Kua number?</h2>
+    <p>Your Kua number (also written <i>Gua</i> number, 命卦) is a single digit from 1 to 9 calculated from your birth year and gender in the <b>Eight Mansions school</b> of classical Chinese feng shui. It identifies your personal trigram from the Bagua, your Five Element, whether you belong to the <b>East group</b> (Kua 1, 3, 4, 9) or <b>West group</b> (Kua 2, 6, 7, 8), and the eight compass directions ranked by how their energy relates to yours.</p>
+    <p>Four directions are considered supportive — <b>Sheng Qi, Tian Yi, Yan Nian and Fu Wei</b> — and four are treated with caution: <b>Jue Ming, Wu Gui, Liu Sha and Huo Hai</b>.</p>
+
+    <h2>How the calculation works</h2>
+    <ol class="steps">
+      <li>Take the last two digits of your birth year and add them until you are left with a single digit. Example: 1987 → 8 + 7 = 15 → 1 + 5 = 6.</li>
+      <li><b>Men born before 2000:</b> subtract that digit from 10. <b>Women born before 2000:</b> add 5 and reduce to one digit.</li>
+      <li><b>Born in 2000 or later:</b> men subtract from 9; women add 6 and reduce to one digit. A result of 0 is read as <b>9</b> (this happens for men born in 2000, 2009, 2018 and 2027).</li>
+      <li>If the result is <b>5</b>, it has no trigram of its own: men use <b>Kua 2 (Kun)</b> and women use <b>Kua 8 (Gen)</b>.</li>
+      <li>If you were born in January or the first days of February (before <b>Li Chun</b>, around 4 February), the feng shui solar year has not yet begun, so the previous year is used — tick the box above.</li>
+    </ol>
+
+    <h2>How to use your four lucky directions</h2>
+    <h3>Sheng Qi (Generating Qi) — wealth &amp; vitality</h3>
+    <p>The strongest of the four. Point the head of your bed this way, or face it at your desk, when career momentum and income are the priority.</p>
+    <h3>Tian Yi (Heavenly Doctor) — health &amp; recovery</h3>
+    <p>The healing direction. Good for sleep while unwell or run down, and for calm rest areas used often.</p>
+    <h3>Yan Nian (Longevity) — relationships &amp; marriage</h3>
+    <p>The relationship direction — the usual first choice for a shared bed and for seating where the household gathers.</p>
+    <h3>Fu Wei (Stability) — clarity &amp; steady growth</h3>
+    <p>Your own trigram's direction; quiet and grounding. Excellent for meditation, study and focused work.</p>
+    <p style="margin-top:14px"><b>Practical note:</b> the direction means the way the <i>top of your head points</i> while sleeping (or the way you <i>face</i> while seated). Use a compass app from the center of the room. If you share a bed with a different group, the breadwinner or the person with health concerns usually takes priority, and Fu Wei is the gentlest compromise.</p>
+
+    <h2>Full Kua reference table</h2>
+    <h3 style="color:var(--good)">The four auspicious directions</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Kua</th><th>Trigram</th><th>Group</th><th>Sheng Qi</th><th>Tian Yi</th><th>Yan Nian</th><th>Fu Wei</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>Kan 坎</td><td>East</td><td class="good-text">SE</td><td class="good-text">E</td><td class="good-text">S</td><td class="good-text">N</td></tr>
+          <tr><td>2</td><td>Kun 坤</td><td>West</td><td class="good-text">NE</td><td class="good-text">W</td><td class="good-text">NW</td><td class="good-text">SW</td></tr>
+          <tr><td>3</td><td>Zhen 震</td><td>East</td><td class="good-text">S</td><td class="good-text">N</td><td class="good-text">SE</td><td class="good-text">E</td></tr>
+          <tr><td>4</td><td>Xun 巽</td><td>East</td><td class="good-text">N</td><td class="good-text">S</td><td class="good-text">E</td><td class="good-text">SE</td></tr>
+          <tr><td>6</td><td>Qian 乾</td><td>West</td><td class="good-text">W</td><td class="good-text">NE</td><td class="good-text">SW</td><td class="good-text">NW</td></tr>
+          <tr><td>7</td><td>Dui 兑</td><td>West</td><td class="good-text">NW</td><td class="good-text">SW</td><td class="good-text">NE</td><td class="good-text">W</td></tr>
+          <tr><td>8</td><td>Gen 艮</td><td>West</td><td class="good-text">SW</td><td class="good-text">NW</td><td class="good-text">W</td><td class="good-text">NE</td></tr>
+          <tr><td>9</td><td>Li 离</td><td>East</td><td class="good-text">E</td><td class="good-text">SE</td><td class="good-text">N</td><td class="good-text">S</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:13.5px;color:var(--muted)">Kua 5 is the center of the Luo Shu and has no direction of its own: men follow Kua 2 and women follow Kua 8.</p>
+
+    <h3 style="color:var(--bad)">The four cautious directions</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Kua</th><th>Huo Hai (mild)</th><th>Wu Gui</th><th>Liu Sha</th><th>Jue Ming (worst)</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>W</td><td>NE</td><td>NW</td><td class="bad-text">SW</td></tr>
+          <tr><td>2</td><td>E</td><td>SE</td><td>S</td><td class="bad-text">N</td></tr>
+          <tr><td>3</td><td>SW</td><td>NW</td><td>NE</td><td class="bad-text">W</td></tr>
+          <tr><td>4</td><td>NW</td><td>SW</td><td>W</td><td class="bad-text">NE</td></tr>
+          <tr><td>6</td><td>SE</td><td>E</td><td>N</td><td class="bad-text">S</td></tr>
+          <tr><td>7</td><td>N</td><td>S</td><td>SE</td><td class="bad-text">E</td></tr>
+          <tr><td>8</td><td>S</td><td>N</td><td>E</td><td class="bad-text">SE</td></tr>
+          <tr><td>9</td><td>NE</td><td>W</td><td>SW</td><td class="bad-text">NW</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Frequently asked questions</h2>
+    <div class="faq">
+      <details><summary>Does my Kua number ever change?</summary><p>No. It is derived from your birth year and gender, so it stays with you for life. What changes year to year is the flying-star overlay of annual energies, which is read separately from your personal Kua.</p></details>
+      <details><summary>Why do men and women born in the same year get different numbers?</summary><p>The classical Lo Shu formula runs in opposite directions for yin and yang birth patterns, which is why the gender term differs. Kua 5 is the most visible case: a man uses Kua 2 (Kun), a woman uses Kua 8 (Gen).</p></details>
+      <details><summary>I was born in January — which year do I use?</summary><p>The feng shui solar year begins at Li Chun, around 3–5 February. If you were born before it, tick the "born before ~4 February" box and the previous year will be used. (Chinese Lunar New Year falls later, around mid-January to mid-February; classical Ba Zhai uses the solar term, Li Chun.)</p></details>
+      <details><summary>What if my partner and I are from different groups?</summary><p>Give priority to the main breadwinner or the person recovering from illness. Otherwise choose a direction that is favorable to both, or use the calmer Fu Wei direction, and support the other person with the placement of their desk or personal seating.</p></details>
+      <details><summary>Is the Kua number the same as my Chinese zodiac sign?</summary><p>No. Your zodiac animal comes from your birth year in the 12-year cycle and describes shared cultural traits; your Kua number uses the Nine-Star/Lo Shu system with gender and gives a personal compass map. <a href="https://www.askmasterli.com/zodiac">You can find your zodiac sign here →</a></p></details>
+    </div>
+  </section>
+
+  <div class="disclaimer">
+    ☯ For entertainment and personal reflection only. Traditional feng shui guidance, not a guarantee of outcomes and not a substitute for professional advice. Directions may vary slightly between regional traditions (Singapore–Hong Kong vs. mainland schools).
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div>© 2026 Ask Master Li · Eight Mansions calculator</div>
+    <div class="foot-links">
+      <a href="https://www.askmasterli.com/">Free I Ching Reading</a>
+      <a href="https://www.askmasterli.com/tools">More Free Tools</a>
+      <a href="https://www.askmasterli.com/zodiac">Chinese Zodiac</a>
+      <a href="https://www.askmasterli.com/#pricing">Plans</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+var DIR = {
+  N:  {full:"North",     abbr:"N",  cn:"北"},
+  NE: {full:"Northeast", abbr:"NE", cn:"东北"},
+  E:  {full:"East",      abbr:"E",  cn:"东"},
+  SE: {full:"Southeast", abbr:"SE", cn:"东南"},
+  S:  {full:"South",     abbr:"S",  cn:"南"},
+  SW: {full:"Southwest", abbr:"SW", cn:"西南"},
+  W:  {full:"West",      abbr:"W",  cn:"西"},
+  NW: {full:"Northwest", abbr:"NW", cn:"西北"}
+};
+
+var KUA = {
+  1:{tri:"Kan 坎",  el:"Water", group:"East", good:{sheng:"SE",tian:"E", yan:"S", fu:"N"},  bad:{huohai:"W", wugui:"NE", liusha:"NW", jueming:"SW"}},
+  2:{tri:"Kun 坤",  el:"Earth", group:"West", good:{sheng:"NE",tian:"W", yan:"NW",fu:"SW"}, bad:{huohai:"E", wugui:"SE", liusha:"S",  jueming:"N"}},
+  3:{tri:"Zhen 震", el:"Wood",  group:"East", good:{sheng:"S", tian:"N", yan:"SE",fu:"E"},  bad:{huohai:"SW",wugui:"NW", liusha:"NE", jueming:"W"}},
+  4:{tri:"Xun 巽",  el:"Wood",  group:"East", good:{sheng:"N", tian:"S", yan:"E", fu:"SE"}, bad:{huohai:"NW",wugui:"SW", liusha:"W",  jueming:"NE"}},
+  6:{tri:"Qian 乾", el:"Metal", group:"West", good:{sheng:"W", tian:"NE",yan:"SW",fu:"NW"}, bad:{huohai:"SE",wugui:"E",  liusha:"N",  jueming:"S"}},
+  7:{tri:"Dui 兑",  el:"Metal", group:"West", good:{sheng:"NW",tian:"SW",yan:"NE",fu:"W"},  bad:{huohai:"N", wugui:"S",  liusha:"SE", jueming:"E"}},
+  8:{tri:"Gen 艮",  el:"Earth", group:"West", good:{sheng:"SW",tian:"NW",yan:"W", fu:"NE"}, bad:{huohai:"S", wugui:"N",  liusha:"E",  jueming:"SE"}},
+  9:{tri:"Li 离",   el:"Fire",  group:"East", good:{sheng:"E", tian:"SE",yan:"N", fu:"S"},  bad:{huohai:"NE",wugui:"W",  liusha:"SW", jueming:"NW"}}
+};
+
+var STAR_LABEL = {
+  sheng:["Sheng Qi 生氣","Generating Qi · wealth &amp; vitality","Face it at your desk, or point the head of your bed this way for momentum and opportunity."],
+  tian: ["Tian Yi 天醫","Heavenly Doctor · health &amp; recovery","Best while ill or run down; use for sleep and calm rest spaces."],
+  yan:  ["Yan Nian 延年","Longevity · relationships &amp; marriage","The relationship direction — favored for a shared bed and family seating."],
+  fu:   ["Fu Wei 伏位","Stability · clarity &amp; steady growth","Your own trigram's direction; ideal for study, meditation and focused work."],
+  huohai:["Huo Hai 禍害","Mishaps · minor friction","The mildest cautious direction; avoid it for your most important seat or bed if you can."],
+  wugui:["Wu Gui 五鬼","Five Ghosts · disputes &amp; disruption","Traditionally linked with arguments, gossip and fire risk — not preferred for sleep."],
+  liusha:["Liu Sha 六煞","Six Killings · relationship strain","Associated with entanglement and scattered focus; avoid for major decisions."],
+  jueming:["Jue Ming 絕命","Total Loss · most cautious","The strongest caution in the system; the head of the bed should not point this way."]
+};
+
+// compass sectors, starting at top, clockwise
+var COMPASS = ["N","NE","E","SE","S","SW","W","NW"];
+var TRI_BIGUA = {N:"坎",NE:"艮",E:"震",SE:"巽",S:"離",SW:"坤",W:"兌",NW:"乾"};
+
+var gender = null;
+function setGender(g){
+  gender = g;
+  document.getElementById("g-female").className = g==="female"?"on":"";
+  document.getElementById("g-male").className = g==="male"?"on":"";
+}
+
+function reduce(n){ while(n>9){ n = String(n).split("").reduce(function(a,b){return a+ +b;},0); } return n; }
+
+function computeKua(year, g){
+  var d = reduce((year%100));
+  var k;
+  if(year < 2000){
+    k = (g==="male") ? (10-d) : reduce(d+5);
+  }else{
+    k = (g==="male") ? (9-d) : reduce(d+6);
+  }
+  // Classical rule: the Kua is never 0 (e.g. males born 2000/2009/2018/2027); 0 is read as 9.
+  if(k===0){ k = 9; }
+  var remap = false;
+  if(k===5){ k = (g==="male") ? 2 : 8; remap = true; }
+  return {kua:k, remap:remap};
+}
+
+function polar(cx,cy,r,angleDeg){
+  var a=(angleDeg-90)*Math.PI/180;
+  return {x:cx+r*Math.cos(a), y:cy+r*Math.sin(a)};
+}
+function sectorPath(cx,cy,r,a0,a1){
+  var p0=polar(cx,cy,r,a0), p1=polar(cx,cy,r,a1);
+  return "M"+cx+","+cy+" L"+p0.x.toFixed(1)+","+p0.y.toFixed(1)+" A"+r+","+r+" 0 0 1 "+p1.x.toFixed(1)+","+p1.y.toFixed(1)+" Z";
+}
+
+function buildCompass(k){
+  var goodSet={}, badSet={};
+  ["sheng","tian","yan","fu"].forEach(function(s){goodSet[KUA[k].good[s]]=s;});
+  ["huohai","wugui","liusha","jueming"].forEach(function(s){badSet[KUA[k].bad[s]]=s;});
+  var sectors="";
+  for(var i=0;i<8;i++){
+    var code=COMPASS[i], fill,stroke;
+    if(goodSet[code]){fill="#e9f6ef";stroke="#bcdccb";}
+    else{fill="#fbedec";stroke="#e7c5c4";}
+    sectors+='<path d="'+sectorPath(150,150,128,i*45-22.5,i*45+22.5)+'" fill="'+fill+'" stroke="'+stroke+'" stroke-width="1.5"/>';
+    var lp=polar(150,150,103,i*45);
+    sectors+='<text x="'+lp.x.toFixed(1)+'" y="'+(lp.y-5).toFixed(1)+'" text-anchor="middle" font-size="17" font-weight="800" fill="#1d2430">'+DIR[code].abbr+'</text>';
+    sectors+='<text x="'+lp.x.toFixed(1)+'" y="'+(lp.y+13).toFixed(1)+'" text-anchor="middle" font-size="12" fill="#7c8a99">'+TRI_BIGUA[code]+'</text>';
+  }
+  return '<svg class="compass" viewBox="0 0 300 300" role="img" aria-label="Bagua compass showing your lucky and cautious directions">'+
+    '<circle cx="150" cy="150" r="128" fill="none" stroke="#0f2740" stroke-width="2"/>'+
+    sectors+
+    '<circle cx="150" cy="150" r="40" fill="#0f2740"/>'+
+    '<text x="150" y="145" text-anchor="middle" font-size="22" font-weight="800" fill="#c9a44c">Kua '+k+'</text>'+
+    '<text x="150" y="165" text-anchor="middle" font-size="11" fill="#dbe6f1">'+KUA[k].group+' group</text>'+
+    '</svg>';
+}
+
+function dirCard(code, starKey, isGood){
+  var s=STAR_LABEL[starKey], d=DIR[code];
+  return '<div class="dir '+(isGood?"good":"bad")+'">'+
+    '<div class="d-name"><b>'+d.full+'</b> ('+d.abbr+') · '+d.cn+'</div>'+
+    '<div class="d-star">'+s[0]+' — '+s[1]+'</div>'+
+    '<div class="d-use">'+s[2]+'</div></div>';
+}
+
+function calc(){
+  var y=parseInt(document.getElementById("year").value,10);
+  if(!gender){alert("Please choose a gender (required by the traditional formula).");return;}
+  if(!y||y<1920||y>2030){alert("Please enter a valid birth year between 1920 and 2030.");return;}
+  var usedYear = document.getElementById("lichun").checked ? y-1 : y;
+  var r = computeKua(usedYear, gender);
+  var k = r.kua, info=KUA[k];
+
+  var goodCards=["sheng","tian","yan","fu"].map(function(s){return dirCard(info.good[s],s,true);}).join("");
+  var badCards=["huohai","wugui","liusha","jueming"].map(function(s){return dirCard(info.bad[s],s,false);}).join("");
+
+  var note = r.remap
+    ? '<p style="font-size:13.5px;color:var(--muted);margin-top:8px">The formula returned 5, which has no trigram of its own — '+ (gender==="male"?"men follow Kua 2 (Kun)":"women follow Kua 8 (Gen)")+'.</p>'
+    : '';
+  if(document.getElementById("lichun").checked){
+    note += '<p style="font-size:13.5px;color:var(--muted);margin-top:4px">Born before Li Chun — calculated using '+usedYear+'.</p>';
+  }
+
+  var shareText="My Feng Shui Kua number is "+k+" ("+info.group+" group). Find yours free:";
+  var shareUrl=encodeURIComponent("https://fengting2025.github.io/kua-number-calculator/?y="+y+"&g="+gender+(document.getElementById("lichun").checked?"&l=1":""));
+
+  var html='<div class="result-head">'+
+    '<div style="font-size:13px;letter-spacing:1.5px;text-transform:uppercase;opacity:.75">Your Kua number</div>'+
+    '<div class="kua-big">'+k+'</div>'+
+    '<div class="kua-sub">'+info.tri+' · '+info.el+' element</div>'+
+    '<div class="group-pill">'+info.group.toUpperCase()+' GROUP · '+(info.group==="East"?"N · E · S · SE favorable":"SW · W · NW · NE favorable")+'</div>'+
+    note+
+    '</div>'+
+    '<div class="result-body card" style="border-radius:0 0 14px 14px;border-top:none">'+
+      buildCompass(k)+
+      '<div class="sec-title">✦ Your 4 lucky directions</div>'+
+      '<div class="dir-grid">'+goodCards+'</div>'+
+      '<div class="sec-title bad">⚠ Directions to use with caution</div>'+
+      '<div class="dir-grid">'+badCards+'</div>'+
+      '<div class="cta-band">'+
+        '<h3>Go deeper: your personal Bazi &amp; 2026 Feng Shui map</h3>'+
+        '<p>Kua directions are just the beginning. Master Li also reads your Four Pillars (Bazi), personal Kua + Bagua layout, 2026 Flying Stars, and couple compatibility — with PDF reports.</p>'+
+        '<div class="cta-btns">'+
+          '<a class="cta-primary" href="https://www.askmasterli.com/#pricing">See full readings &amp; plans →</a>'+
+          '<a class="cta-ghost" href="https://www.askmasterli.com/zodiac">Free zodiac fortune</a>'+
+        '</div>'+
+      '</div>'+
+      '<div class="share-row">'+
+        '<a target="_blank" rel="noopener" href="https://twitter.com/intent/tweet?text='+encodeURIComponent(shareText)+'&url='+shareUrl+'">𝕏 Share on X</a>'+
+        '<a target="_blank" rel="noopener" href="https://www.facebook.com/sharer/sharer.php?u='+shareUrl+'">Facebook</a>'+
+        '<a target="_blank" rel="noopener" href="https://www.reddit.com/submit?url='+shareUrl+'&title='+encodeURIComponent("Free Feng Shui Kua Number Calculator — find your 4 lucky directions")+'">Reddit</a>'+
+        '<button onclick="copyLink(this)">🔗 Copy link</button>'+
+      '</div>'+
+    '</div>';
+
+  var box=document.getElementById("result");
+  box.innerHTML=html;
+  box.style.display="block";
+  box.scrollIntoView({behavior:"smooth",block:"start"});
+  history.replaceState(null,"","?y="+y+"&g="+gender+(document.getElementById("lichun").checked?"&l=1":""));
+}
+
+function copyLink(btn){
+  var u=window.location.href;
+  if(navigator.clipboard){navigator.clipboard.writeText(u).then(function(){btn.textContent="✓ Link copied";setTimeout(function(){btn.textContent="🔗 Copy link";},2000);});}
+}
+
+// prefill from URL: ?y=1990&g=female&l=1
+(function(){
+  var p=new URLSearchParams(location.search);
+  if(p.get("y"))document.getElementById("year").value=p.get("y");
+  if(p.get("g")==="female"||p.get("g")==="male"){setGender(p.get("g"));}
+  if(p.get("l")==="1")document.getElementById("lichun").checked=true;
+  if(p.get("y")&&p.get("g"))calc();
+})();
+</script>
+</body>
+</html>
