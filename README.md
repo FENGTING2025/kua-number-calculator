@@ -1,13 +1,3 @@
----
-AIGC:
-    Label: "1"
-    ContentProducer: 001191110102MACQD9K64018705
-    ProduceID: 3032888153477379_0-drive/238679272587923369/kua-number-calculator/README.md
-    ReservedCode1: ""
-    ContentPropagator: 001191110102MACQD9K64028705
-    PropagateID: 3032888153477379#1792635268061
-    ReservedCode2: ""
----
 # Feng Shui Kua Number Calculator 🧭
 
 A free, single-file, zero-dependency Kua (Gua / Ming Gua · 命卦) calculator for the **Eight Mansions (Ba Zhai · 八宅)** school of classical Feng Shui.
